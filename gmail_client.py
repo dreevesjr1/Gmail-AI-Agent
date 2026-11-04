@@ -77,3 +77,11 @@ def extract_email_body(email_data):
 
                 return decoded_bytes.decode("utf-8")
     return None
+
+def build_email_object(email_data):
+    metadata = extract_email_metadata(email_data)
+    body = extract_email_body(email_data)
+
+    return {"subject": metadata["subject"],
+            "sender": metadata["sender"],
+            "body": body}
