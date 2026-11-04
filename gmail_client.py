@@ -3,6 +3,7 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 import os
+import base64
 
 SCOPES =["https://www.googleapis.com/auth/gmail.readonly"]
 
@@ -46,3 +47,33 @@ def get_email_details(message_id):
     message = service.users().messages().get(userId="me", id=message_id).execute()
 
     return message
+
+def extract_email_metadata(email_data):
+    headers = email_data["payload"]["headers"]
+    subject = None
+    sender = None
+
+    for header in headers:
+        if header["name"] == "Subject":
+            subject = header["value"]
+        elif header["name"] == "From":
+            sender = header["value"]
+
+    return {"subject": subject, "sender": sender}
+
+#Base64 decodes gmail images, text, html, attachments
+def extract_email_body(email_data):
+    parts = email_data["payload"].get("parts",[])
+
+    for part in parts:
+
+        if part["mimeType"] == "text/plain":
+
+            data = part["body"].get("data")
+
+            if data:
+
+                decoded_bytes = base64.urlsafe_b64decode(data)
+
+                return decoded_bytes.decode("utf-8")
+    return None
