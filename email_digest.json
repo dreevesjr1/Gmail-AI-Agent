@@ -1,0 +1,88 @@
+[
+    {
+        "message_id": "1a1a8ea14f7ddbd1",
+        "category": "security",
+        "priority_score": 90,
+        "priority_reason": "Potential unauthorized access to account data.",
+        "summary": "A new access permission was granted to 'gmail-ai-agent' for your Google Account data. If this wasn't authorized by you, it could indicate someone else is trying to access your account. Please check your account activity and secure it immediately.",
+        "action_items": [
+            "Check account activity",
+            "Review access permissions for gmail-ai-agent",
+            "Monitor security notifications"
+        ]
+    },
+    {
+        "message_id": "1a1a7c0a93a773ce",
+        "category": "job search",
+        "priority_score": 85,
+        "priority_reason": "The email provides a strategic approach to job searching, emphasizing company targeting over job postings.",
+        "summary": "Job seekers should focus on researching and targeting companies they admire instead of just applying for posted jobs. The sender encourages building a list of ten desired companies to guide job search efforts.",
+        "action_items": [
+            "Create a Top 10 Company List based on admiration for mission, culture, and products."
+        ]
+    },
+    {
+        "message_id": "1a1a8b1a59edfa00",
+        "category": "work",
+        "priority_score": 75,
+        "priority_reason": "Significant layoffs could impact industry trends and job market.",
+        "summary": "Canva has announced layoffs impacting nearly 25% of its workforce.",
+        "action_items": []
+    },
+    {
+        "message_id": "1a1a89c2c75c8fa2",
+        "category": "promotional",
+        "priority_score": 70,
+        "priority_reason": "Limited time offer on lenses and designer frames",
+        "summary": "EyeBuyDirect is offering 50% off lenses and 30% off designer frames.",
+        "action_items": []
+    },
+    {
+        "message_id": "1a1a88b8315cb266",
+        "category": "promotional",
+        "priority_score": 70,
+        "priority_reason": "Limited time ticket sales for an event.",
+        "summary": "Emily from Fever is reminding you to secure your tickets for the Serial Killer Speakeasy event in Palm Bay, FL, as they are selling quickly.",
+        "action_items": [
+            "Purchase tickets for the Serial Killer Speakeasy event."
+        ]
+    },
+    {
+        "message_id": "1a1a874d79f35725",
+        "category": "promotional",
+        "priority_score": 70,
+        "priority_reason": "Promotional flight deals and discounts available.",
+        "summary": "CheapOair is offering flights starting from $53 and discounts of up to $100 on service fees with the promo code EMAIL100. Booking is available until 10/29/2026 for travel by 12/20/2026.",
+        "action_items": [
+            "Consider booking a flight using the provided promo code for savings.",
+            "Review travel plans to take advantage of the current offers."
+        ]
+    },
+    {
+        "message_id": "1a1a78a1374bb982",
+        "category": "financial",
+        "priority_score": 70,
+        "priority_reason": "Scholarship opportunities can impact education funding.",
+        "summary": "The Bold.org Team is inquiring which of the $5,000 in scholarships Daniel plans to apply for.",
+        "action_items": []
+    },
+    {
+        "message_id": "1a1a7a24d2d48d31",
+        "category": "promotional",
+        "priority_score": 60,
+        "priority_reason": "Introduction of a new service tailored for families",
+        "summary": "AT&T is introducing a service called Personalized Plus designed to meet families' needs.",
+        "action_items": []
+    },
+    {
+        "message_id": "1a1a7c4bf8476d77",
+        "category": "social media",
+        "priority_score": 50,
+        "priority_reason": "Engagement with connections on LinkedIn",
+        "summary": "The email informs the recipient about next steps after adding a new skill to their LinkedIn profile, encouraging them to connect with potential contacts.",
+        "action_items": [
+            "Consider connecting with suggested contacts",
+            "Review and enhance skills profile"
+        ]
+    }
+]

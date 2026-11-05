@@ -4,12 +4,22 @@ from config import OPENAI_API_KEY
 from summarizer import summarize_email
 import json, os
 
+def load_existing_analyses():
+    if not os.path.exists("email_digest.json"):
+        return []
+    with open("email_digest.json","r") as file:
+        return json.load(file)
 
+def save_analyses(analyses):
+    with open("email_digest.json", "w") as file:
+        json.dump(analyses,file, indent=4)
 
 def main():
     emails = get_unread_emails()
 
-    analyses = []
+    analyses = load_existing_analyses()
+
+    existing_ids = {analysis["message_id"] for analysis in analyses}
 
     for email in emails["messages"]:
         message_id = email["id"]
@@ -21,19 +31,13 @@ def main():
         analysis = summarize_email(email_object)
         analysis["message_id"] = message_id
 
-        print(analysis)
-        analyses.append(analysis)
+        if message_id not in existing_ids:
+            analyses.append(analysis)
+            existing_ids.add(message_id)
 
     analyses.sort(key=lambda x:x["priority_score"], reverse=True)
 
-    for analysis in analyses:
-        print("-" * 50)
-        print(f"Message ID: {analysis['message_id']}")
-        print(f"Category: {analysis['category']}")
-        print(f"Priority: {analysis['priority_score']}")
-        print(f"Reason: {analysis['priority_reason']}")
-        print(f"Summary: {analysis['summary']}")
-        print(f"Action items: {analysis['action_items']}")
+    save_analyses(analyses)
 
 if __name__ == "__main__":
     main()
