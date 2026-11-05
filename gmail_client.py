@@ -34,7 +34,7 @@ def get_unread_emails():
     results = service.users().messages().list(
         userId = "me",
         labelIds =["UNREAD"],
-        maxResults=5
+        maxResults=9
     ).execute()
 
     return results
